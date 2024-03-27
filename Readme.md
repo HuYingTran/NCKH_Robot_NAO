@@ -48,3 +48,27 @@ To check naoqi, run code. If no notification, it cussetfully.
 python2.7
 >>> from naoqi import ALProxy
 ```
+### 3. Install Webost
+In terminal coppy and pate
+```
+sudo apt install ./webots_2023b_amd64.deb
+```
+### 4. Install Github
+Creat account in [Github](https://github.com/)
+
+install packages
+```
+sudo apt update
+sudo apt install git
+```
+Check installed
+```
+git --version
+```
+Login
+```
+git config --global user.name "your_name"
+git config --global user.email "email@example.com"
+```
+
+[Intruction and command basic](https://viblo.asia/p/su-dung-git-trong-ubuntu-jaqG0lOPGEKw)
