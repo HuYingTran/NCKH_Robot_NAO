@@ -43,7 +43,7 @@ replace /path/to/python-sdk with path to folder contain package `SDKs 2.8.x-Pyth
 
 ![Install path SDK](/image_shoots/path_python_sdk.png)
 
-To check naoqi, run code. If no notification, it cussetfully.
+To check `naoqi`, run code. If no notification, it cussetfully.
 ```
 python2.7
 >>> from naoqi import ALProxy
@@ -53,7 +53,25 @@ In terminal coppy and pate
 ```
 sudo apt install ./webots_2023b_amd64.deb
 ```
-### 4. Install Github
+### 4. Install NaoqiSim
+
+if you have github, let git clone repositore.
+```
+git clone https://github.com/cyberbotics/naoqisim.git
+```
+if you don't have github, download repositori in [here](https://github.com/cyberbotics/naoqisim) then unzip package.
+
+To use `naoqisim` to control robot in `Webots`, need to set environment varibles as follows:
+```
+export WEBOTS_HOME=/usr/local/webots
+```
+Build `naoqisim`
+```
+cd ~/naoqisim
+make
+```
+
+### 5. Install Github ( Optional )
 Creat account in [Github](https://github.com/)
 
 install packages
