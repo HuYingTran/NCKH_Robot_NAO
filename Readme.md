@@ -1,10 +1,10 @@
 # Project
 
 ## Development environment
-OS Linux-Ubuntu 20.4
-python 2.7
-choregraphe 2.1.4
-SDK naoqi 2.1.4
+OS Linux-Ubuntu 20.4  
+python 2.7  
+choregraphe 2.1.4  
+SDK naoqi 2.1.4  
 Webots 2019a - version 1
 
 ## INSTALL
@@ -34,16 +34,20 @@ Have tow SDKS for Naoqi. In this project, we choice python SDK
 [Link fix](https://stackoverflow.com/questions/22403634/installing-python-sdk-for-nao-robots)</br>
 
 Make sure to install Python 2.7 in linux\
-Download package `SDKs 2.8.x-Python 2.7 SDK` in [Aldebarab](https://www.aldebaran.com/en/support/nao-6/downloads-softwares).
+Download package `SDKs 2.8.5-Python 2.7 SDK` in [Aldebarab](https://www.aldebaran.com/en/support/nao-6/downloads-softwares/former-versions?os=49&category=76#:~:text=SDKs-,2.8.5,-Python%202.7%20SDK).
 Extract package
 ```
 sudo nano ~/.bashrc
 ```
 paste
+
+export PYTHONPATH=${PYTHONPATH}:/path/to/python-sdk/lib/python2.7/site-packages
+
+Exam:
 ```
-$ export PYTHONPATH=${PYTHONPATH}:/path/to/python-sdk/lib/python2.7/site-packages
+export PYTHONPATH=${PYTHONPATH}:/home/huynh/Downloads/python-sdk/lib/python2.7/site-packages
 ```
-replace /path/to/python-sdk with path to folder contain package `SDKs 2.1.x-Python 2.7 SDK`
+replace /path/to/python-sdk with path to folder contain package `SDKs 2.8.5-Python 2.7 SDK`
 
 ![Install path SDK](/image_shoots/path_python_sdk.png)
 
@@ -58,16 +62,12 @@ sudo apt-get update
 sudo apt-get install ffmpeg libavcodec-extra
 sudo apt-get install ubuntu-restricted-extras
 ```
-Download Webots `2019a` in [link](https://github.com/cyberbotics/webots/releases?page=2#:~:text=webots_2018b_amd64.deb)
+Download Webots `2019a` in [link](https://github.com/cyberbotics/webots/releases?page=2#:~:text=webots_2019a%2Drev1_amd64.deb)
 
 In terminal
 ```
-chmod +x webots_8.5.0_amd64.deb
-sudo apt install ./webots_8.5.0_amd64.deb
-```
-or install from Snap store
-```
-sudo snap install webots
+chmod +x webots_2019a-rev1_amd64.deb
+sudo apt install ./webots_2019a-rev1_amd64.deb
 ```
 ### 4. Install NaoqiSim
 
@@ -104,7 +104,43 @@ $ make
 
 Install opencv for naoqisim
 
-### 5. Install Opencv, numpy for python2.7
+### 5. Install Choregraphe 2.1.4
+#### 5.1. Install the relevant part  
+Check version for zlib1g
+```
+dpkg -s zlib1g
+```
+install zlib1g 1.2.9 in [link](https://sourceforge.net/projects/libpng/files/zlib/1.2.9/zlib-1.2.9.tar.gz/download)
+
+```
+tar -xvf zlib-1.2.9.tar.gz
+cd zlib-1.2.9
+make
+```
+
+```
+cd "/home/huynh/Downloads/choregraphe-suite-2.1.4.13-linux64/lib/"
+sudo mv libz.so.1 libz.so.1.old
+
+sudo ln -s /lib/x86_64-linux-gnu/libz.so.1 libz.so.1
+
+sudo ln -s /lib/x86_64-linux-gnu/libz.so.1 libz.so.1
+
+/home/huynh/Downloads/choregraphe-suite-2.1.4.13-linux64/bin/choregraphe-bin
+```
+#### 5.2. Download Choregraphe 2.1.4 in [link](https://community-static.aldebaran.com/resources/2.1.4.13/choregraphe/choregraphe-suite-2.1.4.13-linux64-setup.run)
+```
+chmod +x choregraphe-suite-2.1.4.13-linux64-setup.run
+sudo ./choregraphe-suite-2.1.4.13-linux64-setup.run
+```
+
+#### 5.3. Link fix erorr 
+>/opt/Softbank Robotics/Choregraphe Suite 2.5/bin/../lib/../lib/../lib/libz.so.1: 
+version `ZLIB_1.2.9' not found (required by /usr/lib/x86_64-linux-gnu/libpng16.so.16)
+
+[link](https://nlp.fi.muni.cz/trac/pepper/wiki/InstallationInstructions)
+
+### 6. Install Opencv, numpy for python2.7
 Install `Cmake`
 ```
 sudo apt-get install cmake
