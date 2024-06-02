@@ -27,7 +27,7 @@ sudo python2.7 get-pip.py
 
 ### 2. Install Naoqi
 
-Have tow SDKS for Naoqi. In this project, we choice python SDK
+Have tow SDK for Naoqi. In this project, we choice python SDK
 
 [Instruction link1](http://doc.aldebaran.com/2-5/dev/python/install_guide.html)</br>
 [Instruction link2](https://support.aldebaran.com/support/solutions/articles/80001017327-python-sdk-installation-guide)</br>
@@ -43,7 +43,7 @@ paste
 
 export PYTHONPATH=${PYTHONPATH}:/path/to/python-sdk/lib/python2.7/site-packages
 
-Exam:
+Ex:
 ```
 export PYTHONPATH=${PYTHONPATH}:/home/huynh/Downloads/python-sdk/lib/python2.7/site-packages
 ```
@@ -101,9 +101,6 @@ Build `naoqisim`
 $ cd controllers/naoqisim
 $ make
 ```
-
-Install opencv for naoqisim
-
 ### 5. Install Choregraphe 2.1.4
 #### 5.1. Install the relevant part  
 Check version for zlib1g
@@ -157,19 +154,13 @@ sudo apt-get install -y libgtk-3-dev
 sudo apt-get install -y libatlas-base-dev gfortran
 sudo apt-get install -y python2.7-dev
 ```
-Download packages `Opencv version 3.1.0` and extract
+Download packages `Opencv version 3.4.x.x` and extract
 
 ```
-wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
-unzip opencv.zip
-wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
-unzip opencv_contrib.zip
 ```
-Build lib
+Install by py of python2.7
 ```
-$ cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DENABLE_PRECOMPILED_HEADERS=OFF -DWITH_FFMPEG=OFF ..
-$ make
-$ sudo make install
+pip install opencv-python==3.4.1.15
 ```
 Then install. Check opencv2 in python
 ```
