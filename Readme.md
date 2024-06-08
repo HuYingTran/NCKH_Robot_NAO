@@ -101,6 +101,16 @@ Build `naoqisim`
 $ cd controllers/naoqisim
 $ make
 ```
+
+Fix error path webots
+
+![alt text](/image_shoots/error_naoqisim.jpg)
+
+check cmd 
+```
+export WEBOTS_HOME_PATH=/usr/local/webots
+```
+
 ### 5. Install Choregraphe 2.1.4
 #### 5.1. Install the relevant part  
 Check version for zlib1g
