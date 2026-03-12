@@ -74,7 +74,7 @@ def run_camera():
             image = np.frombuffer(array, dtype=np.uint8).reshape((height, width, 3))
             result = send_to_yolo(image)
             
-            cv2.imshow("YOLO + Edge Detect", result)
+            cv2.imshow("YOLO detect", result)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
 
