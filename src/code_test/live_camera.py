@@ -31,8 +31,8 @@ def parse_args():
     parser.add_argument(
         "--camera",
         type=int,
-        default=0,
-        help="ID camera (0: top, 1: bottom)",
+        default=2,
+        help="ID camera (0: top, 1: bottom, 2: both)",
     )
     parser.add_argument(
         "--resolution",
@@ -43,7 +43,7 @@ def parse_args():
     parser.add_argument(
         "--fps",
         type=int,
-        default=15,
+        default=30,
         help="FPS yeu cau (mac dinh: 15)",
     )
     return parser.parse_args()
